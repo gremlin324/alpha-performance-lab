@@ -1,0 +1,114 @@
+---
+import CountdownTimer from './CountdownTimer.jsx';
+
+const ctaHref = "https://2be6ay18106x2x8dua0ezqwh-q.hop.clickbank.net/?&traffic_source=google&traffic_type=organic";
+const dismissKey = "apl_offer_banner_dismissed";
+---
+
+<div id="offer-banner" class="bg-gradient-to-r from-red-600 to-orange-600 text-white py-3 px-4 relative z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-2">
+        <span class="text-yellow-300 font-bold text-sm">⚡ LIMITED TIME</span>
+        <span class="text-white font-semibold">
+          $197 value for $39 — ends in 
+          <CountdownTimer 
+            client:load
+            deadlineKey="apl_offer_deadline" 
+            durationMinutes={60}
+            className="text-yellow-300 ml-1"
+          />
+        </span>
+      </div>
+    </div>
+    
+    <div class="flex items-center space-x-3">
+      <a 
+        href={ctaHref}
+        class="bg-yellow-400 hover:bg-yellow-300 text-red-800 font-bold px-4 py-2 rounded-lg transition-colors text-sm"
+        id="offer-cta"
+      >
+        Get $39 Deal Now
+      </a>
+      
+      <button 
+        class="text-white hover:text-yellow-300 transition-colors text-lg font-bold"
+        id="dismiss-banner"
+        aria-label="Dismiss offer banner"
+      >
+        ×
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Handle banner dismissal
+  document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('offer-banner');
+    const dismissBtn = document.getElementById('dismiss-banner');
+    const ctaBtn = document.getElementById('offer-cta');
+    
+    // Check if banner was previously dismissed
+    if (localStorage.getItem('apl_offer_banner_dismissed') === 'true') {
+      banner.style.display = 'none';
+    }
+    
+    // Handle dismiss button
+    dismissBtn?.addEventListener('click', () => {
+      banner.style.display = 'none';
+      localStorage.setItem('apl_offer_banner_dismissed', 'true');
+    });
+    
+    // Handle offer expiry
+    const checkExpiry = () => {
+      const deadline = localStorage.getItem('apl_offer_deadline');
+      if (deadline && Date.now() > parseInt(deadline)) {
+        // Offer expired - update banner content
+        const bannerText = banner.querySelector('span');
+        if (bannerText) {
+          bannerText.textContent = 'Offer expired — see current bonuses';
+        }
+        
+        // Update CTA to link to bonuses page
+        if (ctaBtn) {
+          ctaBtn.textContent = 'View Bonuses';
+          ctaBtn.href = '/bonuses';
+          ctaBtn.classList.remove('bg-yellow-400', 'hover:bg-yellow-300', 'text-red-800');
+          ctaBtn.classList.add('bg-gray-400', 'hover:bg-gray-300', 'text-gray-800');
+        }
+      }
+    };
+    
+    // Check expiry every 30 seconds
+    setInterval(checkExpiry, 30000);
+    checkExpiry(); // Initial check
+  });
+</script>
+
+<style>
+  #offer-banner {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    #offer-banner .max-w-7xl {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    #offer-banner .flex.items-center.space-x-4 {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    
+    #offer-banner .flex.items-center.space-x-2 {
+      flex-direction: column;
+      gap: 0.25rem;
+      text-align: center;
+    }
+  }
+</style>

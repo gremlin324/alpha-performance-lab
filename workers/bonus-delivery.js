@@ -162,7 +162,7 @@ async function recordDelivery(receiptData, accessToken, env) {
 async function sendBonusPackage(to, accessToken, env) {
   const bonusEmail = {
     to: to,
-    subject: 'Your $197 Edison Wave Bonus Package - Access Your Free Bonuses Now!',
+    subject: 'Your $197 Edison Wave Bonus Package - Access Your $39 Limited-Time Bonuses Now!',
     html: `
       <!DOCTYPE html>
       <html>
@@ -187,7 +187,7 @@ async function sendBonusPackage(to, accessToken, env) {
           </div>
           
           <div class="content">
-            <p>Thank you for purchasing The Edison Wave! As promised, here's your exclusive bonus package worth $197 - completely FREE.</p>
+            <p>Thank you for purchasing The Edison Wave! As promised, here's your exclusive bonus package worth $197 - available for just $39 during our limited-time offer.</p>
             
             <div class="bonus-item">
               <h3>🎵 Bonus #1: Cognitive Clarity Audio Collection</h3>
