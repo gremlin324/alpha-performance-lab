@@ -1,0 +1,461 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import CallToAction from '../components/CallToAction.astro'
+---
+
+<MainLayout title="Bonus Delivery System - Alpha Performance Lab" description="Complete guide to implementing automated bonus delivery system using Cloudflare Workers, Airtable, and email automation for The Edison Wave affiliate package.">
+
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <header class="mb-12">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      Bonus Delivery System Implementation
+    </h1>
+    <p class="text-xl text-gray-600">
+      Complete guide to implementing automated bonus delivery system using Cloudflare Workers, 
+      Airtable, and email automation for The Edison Wave affiliate package.
+    </p>
+  </header>
+
+  <div class="prose prose-lg max-w-none">
+    
+    <!-- System Overview -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">System Overview</h2>
+      
+      <div class="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg p-8 mb-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Alpha Acceleration Stack - $197 Value</h3>
+        <p class="text-lg text-gray-700 mb-6">
+          Automated bonus delivery system that instantly provides customers with exclusive content 
+          upon purchase verification. No manual intervention required.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-3">Bonus Components</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li>• Cognitive Clarity Audio Collection ($97)</li>
+              <li>• Alpha Performance Habit Tracker ($47)</li>
+              <li>• 7-Day Alpha Mastery Email Course ($37)</li>
+              <li>• Private Discord Community Access ($16)</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-3">Delivery Features</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li>• Instant automated delivery</li>
+              <li>• Secure access tokens</li>
+              <li>• Email confirmation</li>
+              <li>• Download tracking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Architecture -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Technical Architecture</h2>
+      
+      <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">System Components</h3>
+        <div class="space-y-6">
+          <div class="flex items-start">
+            <div class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center mr-3 mt-1">
+              <span class="text-blue-600 font-bold text-sm">1</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Cloudflare Email Worker</h4>
+              <p class="text-gray-700 text-sm">
+                Receives purchase confirmation emails and triggers bonus delivery process. 
+                Handles email parsing and validation.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-3 mt-1">
+              <span class="text-green-600 font-bold text-sm">2</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Airtable Database</h4>
+              <p class="text-gray-700 text-sm">
+                Stores customer information, bonus access tokens, and delivery status. 
+                Provides API for data management.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="bg-purple-100 w-8 h-8 rounded-full flex items-center justify-center mr-3 mt-1">
+              <span class="text-purple-600 font-bold text-sm">3</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Email Service (SendGrid)</h4>
+              <p class="text-gray-700 text-sm">
+                Sends bonus delivery emails with secure access links and instructions. 
+                Handles email templates and tracking.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="bg-orange-100 w-8 h-8 rounded-full flex items-center justify-center mr-3 mt-1">
+              <span class="text-orange-600 font-bold text-sm">4</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Secure File Storage</h4>
+              <p class="text-gray-700 text-sm">
+                Stores bonus files with time-limited access links. 
+                Ensures secure delivery and prevents unauthorized access.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementation Steps -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Implementation Steps</h2>
+      
+      <div class="space-y-8">
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Step 1: Airtable Database Setup</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Database Structure</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Customer email address</li>
+                <li>• Purchase confirmation ID</li>
+                <li>• Access token (UUID)</li>
+                <li>• Delivery status</li>
+                <li>• Timestamp</li>
+                <li>• Download count</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">API Configuration</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Generate API key</li>
+                <li>• Set base ID</li>
+                <li>• Configure permissions</li>
+                <li>• Test API endpoints</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Step 2: Cloudflare Email Worker</h3>
+          <div class="bg-gray-50 p-4 rounded-lg mb-4">
+            <pre class="text-sm text-gray-700"><code>{`// workers/bonus-delivery.js
+export default {
+  async email(message, env, ctx) {
+    const { from, to, headers } = message;
+    const subject = headers.get('Subject') || '';
+    
+    // Check for purchase confirmation
+    if (subject.includes('Edison Wave Purchase Confirmation')) {
+      // Extract customer email
+      const customerEmail = from;
+      
+      // Generate secure access token
+      const accessToken = crypto.randomUUID();
+      
+      // Store in Airtable
+      await fetch(\`https://api.airtable.com/v0/\${env.AIRTABLE_BASE_ID}/Customers\`, {
+        method: 'POST',
+        headers: {
+          'Authorization': \`Bearer \${env.AIRTABLE_API_KEY}\`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          fields: {
+            'Email': customerEmail,
+            'Access Token': accessToken,
+            'Status': 'Pending',
+            'Timestamp': new Date().toISOString()
+          }
+        })
+      });
+      
+      // Send bonus delivery email
+      await sendBonusEmail(customerEmail, accessToken, env);
+    }
+  }
+};`}</code></pre>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Step 3: Email Template Design</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Email Content</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Welcome message</li>
+                <li>• Bonus package overview</li>
+                <li>• Secure access links</li>
+                <li>• Usage instructions</li>
+                <li>• Support contact</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Design Elements</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Professional branding</li>
+                <li>• Clear call-to-action buttons</li>
+                <li>• Mobile-responsive layout</li>
+                <li>• Security badges</li>
+                <li>• Social proof elements</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Step 4: Secure File Delivery</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">File Organization</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Audio tracks (MP3 format)</li>
+                <li>• PDF guides and templates</li>
+                <li>• Video tutorials</li>
+                <li>• Discord invite links</li>
+                <li>• Email course content</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Security Measures</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Time-limited access links</li>
+                <li>• IP address restrictions</li>
+                <li>• Download count limits</li>
+                <li>• Encrypted file storage</li>
+                <li>• Access logging</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bonus Access Pages -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Bonus Access Pages</h2>
+      
+      <div class="space-y-6">
+        <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-green-800 mb-4">Audio Collection Access Page</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Features</h4>
+              <ul class="space-y-2 text-green-700 text-sm">
+                <li>• Streaming audio player</li>
+                <li>• Download links for each track</li>
+                <li>• Track descriptions and use cases</li>
+                <li>• Usage instructions</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Security</h4>
+              <ul class="space-y-2 text-green-700 text-sm">
+                <li>• Token-based access</li>
+                <li>• Session management</li>
+                <li>• Download tracking</li>
+                <li>• Access expiration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-blue-800 mb-4">Habit Tracker Access Page</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Features</h4>
+              <ul class="space-y-2 text-blue-700 text-sm">
+                <li>• Notion template download</li>
+                <li>• Setup instructions</li>
+                <li>• Video walkthrough</li>
+                <li>• Customization tips</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Content</h4>
+              <ul class="space-y-2 text-blue-700 text-sm">
+                <li>• Daily habit tracking</li>
+                <li>• Progress visualization</li>
+                <li>• Goal setting framework</li>
+                <li>• Performance metrics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-purple-800 mb-4">Email Course Access Page</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Features</h4>
+              <ul class="space-y-2 text-purple-700 text-sm">
+                <li>• Course enrollment form</li>
+                <li>• Email sequence preview</li>
+                <li>• Progress tracking</li>
+                <li>• Resource downloads</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Content</h4>
+              <ul class="space-y-2 text-purple-700 text-sm">
+                <li>• Day 1: Alpha Wave Fundamentals</li>
+                <li>• Day 2: Optimal Listening Times</li>
+                <li>• Day 3: Combining with Meditation</li>
+                <li>• Day 4-7: Advanced Techniques</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-orange-800 mb-4">Discord Community Access</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Features</h4>
+              <ul class="space-y-2 text-orange-700 text-sm">
+                <li>• Private invite link</li>
+                <li>• Welcome message</li>
+                <li>• Channel access</li>
+                <li>• Role assignments</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Community Benefits</h4>
+              <ul class="space-y-2 text-orange-700 text-sm">
+                <li>• Expert Q&A sessions</li>
+                <li>• Success stories sharing</li>
+                <li>• Exclusive content</li>
+                <li>• Peer support network</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality Assurance -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Quality Assurance & Testing</h2>
+      
+      <div class="space-y-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Testing Checklist</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Email Worker Testing</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Test email parsing accuracy</li>
+                <li>• Verify token generation</li>
+                <li>• Check Airtable integration</li>
+                <li>• Test error handling</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Bonus Delivery Testing</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Test email delivery</li>
+                <li>• Verify access links</li>
+                <li>• Check file downloads</li>
+                <li>• Test security measures</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Performance Monitoring</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Metrics to Track</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Delivery success rate</li>
+                <li>• Email open rates</li>
+                <li>• Download completion rates</li>
+                <li>• Customer satisfaction scores</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Monitoring Tools</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Cloudflare Analytics</li>
+                <li>• SendGrid Analytics</li>
+                <li>• Airtable usage reports</li>
+                <li>• Custom dashboards</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Troubleshooting Guide -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Troubleshooting Guide</h2>
+      
+      <div class="space-y-6">
+        <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-red-800 mb-4">Common Issues & Solutions</h3>
+          <div class="space-y-4">
+            <div>
+              <h4 class="font-semibold text-gray-900">Email Not Received</h4>
+              <p class="text-red-700 text-sm">
+                Check spam folder, verify email address, and ensure SendGrid is properly configured.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Access Links Not Working</h4>
+              <p class="text-red-700 text-sm">
+                Verify token generation, check link expiration, and ensure proper URL encoding.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Files Not Downloading</h4>
+              <p class="text-red-700 text-sm">
+                Check file permissions, verify storage configuration, and test download links.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-green-600 rounded-lg p-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-6">
+        Experience Our Automated Bonus System
+      </h2>
+      <p class="text-xl text-green-100 mb-8">
+        Get The Edison Wave today and receive instant access to our $197 bonus package 
+        through our automated delivery system. No waiting, no hassle!
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <CallToAction 
+          text="Get The Edison Wave + $197 Bonuses" 
+          href="https://2be6ay18106x2x8dua0ezqwh-q.hop.clickbank.net/?&traffic_source=google&traffic_type=organic"
+          variant="success"
+          size="lg"
+        />
+        <CallToAction 
+          text="Read Our Complete Review" 
+          href="/review"
+          variant="secondary"
+          size="lg"
+        />
+      </div>
+    </section>
+  </div>
+</article>
+
+</MainLayout>

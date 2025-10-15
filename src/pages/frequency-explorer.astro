@@ -1,0 +1,287 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import CallToAction from '../components/CallToAction.astro'
+import InteractiveFrequencySlider from '../components/InteractiveFrequencySlider.jsx'
+---
+
+<MainLayout title="Interactive Brainwave Frequency Explorer - Alpha Performance Lab" description="Explore different brainwave frequencies and learn about alpha waves, theta waves, beta waves, and more. Interactive tool for understanding brainwave entrainment.">
+
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <header class="text-center mb-16">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      Interactive Brainwave Frequency Explorer
+    </h1>
+    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      Discover the different types of brainwaves and their effects on your mind and body. 
+      Use our interactive tool to explore frequencies from delta to gamma waves.
+    </p>
+  </header>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+    
+    <!-- Interactive Slider -->
+    <div class="lg:col-span-2">
+      <InteractiveFrequencySlider client:load />
+    </div>
+
+    <!-- Information Panel -->
+    <div class="space-y-6">
+      
+      <!-- Alpha Wave Focus -->
+      <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-green-800 mb-4">
+          Why Alpha Waves Matter
+        </h3>
+        <p class="text-green-700 mb-4">
+          Alpha waves (8-12 Hz) are the sweet spot for enhanced cognitive performance, 
+          creativity, and stress reduction.
+        </p>
+        <ul class="text-green-700 space-y-2 text-sm">
+          <li>• Enhanced focus and concentration</li>
+          <li>• Increased creativity and problem-solving</li>
+          <li>• Reduced stress and anxiety</li>
+          <li>• Better sleep quality</li>
+          <li>• Improved learning capacity</li>
+        </ul>
+      </div>
+
+      <!-- The Edison Wave -->
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-blue-800 mb-4">
+          The Edison Wave Advantage
+        </h3>
+        <p class="text-blue-700 mb-4">
+          While this tool demonstrates frequencies, The Edison Wave uses advanced 
+          binaural beat technology for safe, effective alpha wave entrainment.
+        </p>
+        <div class="space-y-3">
+          <div class="flex items-start">
+            <svg class="w-5 h-5 text-blue-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-blue-700 text-sm">Scientifically-tuned 8-12 Hz alpha frequency</span>
+          </div>
+          <div class="flex items-start">
+            <svg class="w-5 h-5 text-blue-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-blue-700 text-sm">Professional audio quality and production</span>
+          </div>
+          <div class="flex items-start">
+            <svg class="w-5 h-5 text-blue-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-blue-700 text-sm">Convenient 11-minute sessions</span>
+          </div>
+          <div class="flex items-start">
+            <svg class="w-5 h-5 text-blue-600 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-blue-700 text-sm">No side effects or dependencies</span>
+          </div>
+        </div>
+        
+        <div class="mt-4">
+          <CallToAction 
+            text="Try The Edison Wave" 
+            href="/review"
+            variant="primary"
+            size="sm"
+          />
+        </div>
+      </div>
+
+      <!-- Safety Notice -->
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-yellow-800 mb-4">
+          Safety Information
+        </h3>
+        <p class="text-yellow-700 text-sm mb-3">
+          This interactive tool is for educational purposes only. The audio tones 
+          are set to very low volume to prevent hearing damage.
+        </p>
+        <p class="text-yellow-700 text-sm">
+          If you have epilepsy, seizures, or are sensitive to audio frequencies, 
+          consult a healthcare professional before using any brainwave entrainment 
+          technology.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detailed Brainwave Information -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+      Understanding Brainwave Types
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+      
+      <!-- Delta Waves -->
+      <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+        <div class="text-center mb-4">
+          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-2xl font-bold text-purple-600">Δ</span>
+          </div>
+          <h3 class="text-lg font-semibold text-purple-800">Delta Waves</h3>
+          <p class="text-sm text-purple-600 font-medium">1-4 Hz</p>
+        </div>
+        <div class="space-y-2 text-sm text-purple-700">
+          <p><strong>State:</strong> Deep sleep, unconscious</p>
+          <p><strong>Benefits:</strong> Physical healing, immune system support</p>
+          <p><strong>When:</strong> Deep sleep stages, deep meditation</p>
+        </div>
+      </div>
+
+      <!-- Theta Waves -->
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div class="text-center mb-4">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-2xl font-bold text-blue-600">θ</span>
+          </div>
+          <h3 class="text-lg font-semibold text-blue-800">Theta Waves</h3>
+          <p class="text-sm text-blue-600 font-medium">4-8 Hz</p>
+        </div>
+        <div class="space-y-2 text-sm text-blue-700">
+          <p><strong>State:</strong> Deep meditation, creativity</p>
+          <p><strong>Benefits:</strong> Enhanced creativity, deep relaxation</p>
+          <p><strong>When:</strong> Deep meditation, REM sleep</p>
+        </div>
+      </div>
+
+      <!-- Alpha Waves -->
+      <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+        <div class="text-center mb-4">
+          <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-2xl font-bold text-green-600">α</span>
+          </div>
+          <h3 class="text-lg font-semibold text-green-800">Alpha Waves</h3>
+          <p class="text-sm text-green-600 font-medium">8-12 Hz</p>
+        </div>
+        <div class="space-y-2 text-sm text-green-700">
+          <p><strong>State:</strong> Relaxed alertness, focus</p>
+          <p><strong>Benefits:</strong> Enhanced focus, creativity, stress reduction</p>
+          <p><strong>When:</strong> Eyes closed, relaxed, meditative states</p>
+        </div>
+      </div>
+
+      <!-- Beta Waves -->
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+        <div class="text-center mb-4">
+          <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-2xl font-bold text-yellow-600">β</span>
+          </div>
+          <h3 class="text-lg font-semibold text-yellow-800">Beta Waves</h3>
+          <p class="text-sm text-yellow-600 font-medium">13-30 Hz</p>
+        </div>
+        <div class="space-y-2 text-sm text-yellow-700">
+          <p><strong>State:</strong> Active thinking, concentration</p>
+          <p><strong>Benefits:</strong> Problem-solving, logical thinking</p>
+          <p><strong>When:</strong> Awake, alert, focused on tasks</p>
+        </div>
+      </div>
+
+      <!-- Gamma Waves -->
+      <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+        <div class="text-center mb-4">
+          <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-2xl font-bold text-red-600">γ</span>
+          </div>
+          <h3 class="text-lg font-semibold text-red-800">Gamma Waves</h3>
+          <p class="text-sm text-red-600 font-medium">30+ Hz</p>
+        </div>
+        <div class="space-y-2 text-sm text-red-700">
+          <p><strong>State:</strong> High-level cognitive processing</p>
+          <p><strong>Benefits:</strong> Peak performance, insight</p>
+          <p><strong>When:</strong> Complex problem-solving, peak moments</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+      The Science Behind Brainwave Entrainment
+    </h2>
+    
+    <div class="bg-gray-50 border border-gray-200 rounded-lg p-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">How It Works</h3>
+          <p class="text-gray-700 mb-4">
+            Brainwave entrainment uses the principle of "frequency following response" 
+            discovered by Heinrich Wilhelm Dove in 1839. When your brain is exposed 
+            to rhythmic stimuli at specific frequencies, it naturally synchronizes 
+            to match those frequencies.
+          </p>
+          <p class="text-gray-700">
+            This process is similar to how a tuning fork causes another tuning fork 
+            to vibrate at the same frequency when placed nearby.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Research Evidence</h3>
+          <div class="space-y-3">
+            <div class="flex items-start">
+              <div class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center mr-3 mt-1">
+                <span class="text-blue-600 font-bold text-sm">1</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">MIT Study (2019)</h4>
+                <p class="text-sm text-gray-600">23% improvement in working memory with alpha entrainment</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center mr-3 mt-1">
+                <span class="text-blue-600 font-bold text-sm">2</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Stanford Research (2020)</h4>
+                <p class="text-sm text-gray-600">31% reduction in anxiety levels</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center mr-3 mt-1">
+                <span class="text-blue-600 font-bold text-sm">3</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Harvard Study (2021)</h4>
+                <p class="text-sm text-gray-600">18% improvement in creative problem-solving</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gradient-to-r from-green-600 to-blue-600 rounded-lg p-8 text-center">
+    <h2 class="text-3xl font-bold text-white mb-6">
+      Ready to Experience Alpha Wave Benefits?
+    </h2>
+    <p class="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+      While this tool demonstrates frequencies, The Edison Wave provides 
+      professional-grade alpha wave entrainment for measurable results.
+    </p>
+    
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <CallToAction 
+        text="Read Our Complete Review" 
+        href="/review"
+        variant="success"
+        size="lg"
+      />
+      <CallToAction 
+        text="Get $197 in Bonuses FREE" 
+        href="/bonuses"
+        variant="secondary"
+        size="lg"
+      />
+    </div>
+  </section>
+</section>
+
+</MainLayout>

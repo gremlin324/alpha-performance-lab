@@ -1,0 +1,289 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro'
+import CallToAction from '../../components/CallToAction.astro'
+
+// Get token from URL parameters
+const url = new URL(Astro.request.url);
+const token = url.searchParams.get('token');
+---
+
+<MainLayout title="Exclusive Discord Community Access - Alpha Performance Lab Bonuses" description="Join our exclusive Discord community of alpha wave enthusiasts. Get daily tips, success stories, and monthly AMA sessions worth $16.">
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <header class="text-center mb-16">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      💬 Exclusive Discord Community
+    </h1>
+    <p class="text-xl text-gray-600">
+      Your $16 bonus community access - Join alpha wave enthusiasts worldwide
+    </p>
+  </header>
+
+  {token ? (
+    <div class="space-y-8">
+      
+      <!-- Access Granted -->
+      <div class="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-green-800 mb-4">Welcome to the Community!</h2>
+        <p class="text-green-700 mb-6">
+          You now have exclusive access to our Discord community of alpha wave enthusiasts.
+        </p>
+        <p class="text-sm text-green-600 bg-green-100 px-4 py-2 rounded-lg inline-block">
+          Access Token: {token}
+        </p>
+      </div>
+
+      <!-- Community Features -->
+      <div class="bg-white border border-gray-200 rounded-lg p-8 shadow-lg">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">What You'll Find in Our Community</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Daily Content</h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Daily alpha wave tips and techniques
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Success stories and testimonials
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Exclusive content and updates
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Q&A sessions with experts
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Community Events</h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                </svg>
+                Monthly AMA sessions with guest experts
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                </svg>
+                Weekly group meditation sessions
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                </svg>
+                Monthly challenges and competitions
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                </svg>
+                Product updates and new features
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Discord Invite -->
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-8 text-center">
+        <h3 class="text-2xl font-bold text-indigo-800 mb-4">Join Our Discord Server</h3>
+        <p class="text-indigo-700 mb-6">
+          Click the button below to join our exclusive Discord community. 
+          You'll be automatically verified as a premium member.
+        </p>
+        
+        <div class="space-y-4">
+          <CallToAction 
+            text="Join Discord Community" 
+            href={`https://discord.gg/alpha-performance-lab?token=${token}`}
+            variant="primary"
+            size="lg"
+          />
+          
+          <div class="text-sm text-indigo-600">
+            <p>🔒 Exclusive access for Edison Wave customers only</p>
+            <p>👥 Connect with like-minded alpha wave enthusiasts</p>
+            <p>📱 Available on desktop, mobile, and web</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community Guidelines -->
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Community Guidelines</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Be Respectful</h4>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>• Treat all members with kindness and respect</li>
+              <li>• No harassment, bullying, or discrimination</li>
+              <li>• Keep discussions constructive and helpful</li>
+              <li>• Respect different opinions and experiences</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Stay On Topic</h4>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>• Focus on alpha waves, brainwave entrainment, and related topics</li>
+              <li>• Share relevant experiences and insights</li>
+              <li>• Ask questions and help others learn</li>
+              <li>• Avoid spam and self-promotion</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Privacy & Safety</h4>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>• Don't share personal information publicly</li>
+              <li>• Report any inappropriate behavior to moderators</li>
+              <li>• Keep medical advice discussions general</li>
+              <li>• Respect intellectual property rights</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Community Spirit</h4>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>• Help newcomers feel welcome</li>
+              <li>• Share your success stories</li>
+              <li>• Participate in community events</li>
+              <li>• Contribute to a positive atmosphere</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community Stats -->
+      <div class="bg-white border border-gray-200 rounded-lg p-8 shadow-lg">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Our Growing Community</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-blue-600 mb-2">500+</div>
+            <div class="text-sm text-gray-600">Active Members</div>
+          </div>
+          
+          <div class="text-center">
+            <div class="text-3xl font-bold text-green-600 mb-2">50+</div>
+            <div class="text-sm text-gray-600">Daily Messages</div>
+          </div>
+          
+          <div class="text-center">
+            <div class="text-3xl font-bold text-purple-600 mb-2">12</div>
+            <div class="text-sm text-gray-600">Expert AMAs</div>
+          </div>
+          
+          <div class="text-center">
+            <div class="text-3xl font-bold text-orange-600 mb-2">24/7</div>
+            <div class="text-sm text-gray-600">Support Available</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Bonuses -->
+      <div class="bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Your Complete Bonus Package</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Audio Collection</h4>
+            <p class="text-sm text-gray-600 mb-4">4 professionally-mastered tracks</p>
+            <CallToAction 
+              text="Get Audio" 
+              href={`/bonuses/audio?token=${token}`}
+              variant="secondary"
+              size="sm"
+            />
+          </div>
+          
+          <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Habit Tracker</h4>
+            <p class="text-sm text-gray-600 mb-4">Notion template for progress tracking</p>
+            <CallToAction 
+              text="Get Tracker" 
+              href={`/bonuses/tracker?token=${token}`}
+              variant="secondary"
+              size="sm"
+            />
+          </div>
+          
+          <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Email Course</h4>
+            <p class="text-sm text-gray-600 mb-4">7-day alpha mastery course</p>
+            <CallToAction 
+              text="Start Course" 
+              href={`/bonuses/course?token=${token}`}
+              variant="secondary"
+              size="sm"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <!-- Access Denied -->
+    <div class="bg-red-50 border border-red-200 rounded-lg p-8 text-center">
+      <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold text-red-800 mb-4">Access Denied</h2>
+      <p class="text-red-700 mb-6">
+        This bonus content is only available to Edison Wave customers. 
+        Please ensure you have a valid access token.
+      </p>
+      <div class="space-y-4">
+        <CallToAction 
+          text="Purchase The Edison Wave" 
+          href="/review"
+          variant="primary"
+          size="lg"
+        />
+        <p class="text-sm text-red-600">
+          Need help? Contact us at bonuses@alphaperformancelab.com
+        </p>
+      </div>
+    </div>
+  )}
+</section>
+
+</MainLayout>

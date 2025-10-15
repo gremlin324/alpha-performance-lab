@@ -1,0 +1,329 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro'
+import CallToAction from '../../components/CallToAction.astro'
+
+// Get token from URL parameters
+const url = new URL(Astro.request.url);
+const token = url.searchParams.get('token');
+---
+
+<MainLayout title="Cognitive Clarity Audio Collection - Alpha Performance Lab Bonuses" description="Download your free Cognitive Clarity Audio Collection - 4 professionally-mastered ambient tracks worth $97. Part of your Edison Wave bonus package.">
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <header class="text-center mb-16">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      🎵 Cognitive Clarity Audio Collection
+    </h1>
+    <p class="text-xl text-gray-600">
+      Your $97 bonus audio package - 4 professionally-mastered ambient tracks
+    </p>
+  </header>
+
+  {token ? (
+    <div class="space-y-8">
+      
+      <!-- Access Granted -->
+      <div class="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-green-800 mb-4">Access Granted!</h2>
+        <p class="text-green-700 mb-6">
+          Thank you for purchasing The Edison Wave. Your bonus audio collection is ready for download.
+        </p>
+        <p class="text-sm text-green-600 bg-green-100 px-4 py-2 rounded-lg inline-block">
+          Access Token: {token}
+        </p>
+      </div>
+
+      <!-- Audio Tracks -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Track 1 -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-lg">
+          <div class="text-center mb-4">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Focus Flow</h3>
+            <p class="text-gray-600">15 minutes</p>
+          </div>
+          <p class="text-gray-700 mb-4">
+            Designed to enhance concentration and mental clarity. Perfect for work sessions, 
+            studying, or any task requiring sustained attention.
+          </p>
+          <div class="space-y-2 text-sm text-gray-600">
+            <p><strong>Frequency:</strong> 10 Hz alpha waves</p>
+            <p><strong>Best for:</strong> Deep work, studying, coding</p>
+            <p><strong>Format:</strong> MP3, 320 kbps</p>
+          </div>
+          <div class="mt-4">
+            <CallToAction 
+              text="Download Focus Flow" 
+              href={`/api/download/focus-flow.mp3?token=${token}`}
+              variant="primary"
+              size="sm"
+            />
+          </div>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-lg">
+          <div class="text-center mb-4">
+            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Creative Spark</h3>
+            <p class="text-gray-600">12 minutes</p>
+          </div>
+          <p class="text-gray-700 mb-4">
+            Stimulates creative thinking and problem-solving. Ideal for brainstorming sessions, 
+            artistic projects, or when you need fresh ideas.
+          </p>
+          <div class="space-y-2 text-sm text-gray-600">
+            <p><strong>Frequency:</strong> 8-12 Hz alpha waves</p>
+            <p><strong>Best for:</strong> Brainstorming, writing, design</p>
+            <p><strong>Format:</strong> MP3, 320 kbps</p>
+          </div>
+          <div class="mt-4">
+            <CallToAction 
+              text="Download Creative Spark" 
+              href={`/api/download/creative-spark.mp3?token=${token}`}
+              variant="primary"
+              size="sm"
+            />
+          </div>
+        </div>
+
+        <!-- Track 3 -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-lg">
+          <div class="text-center mb-4">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Deep Concentration</h3>
+            <p class="text-gray-600">20 minutes</p>
+          </div>
+          <p class="text-gray-700 mb-4">
+            Extended session for deep focus work. Combines alpha waves with theta frequencies 
+            for maximum concentration and flow states.
+          </p>
+          <div class="space-y-2 text-sm text-gray-600">
+            <p><strong>Frequency:</strong> 8-10 Hz alpha waves</p>
+            <p><strong>Best for:</strong> Complex tasks, research, analysis</p>
+            <p><strong>Format:</strong> MP3, 320 kbps</p>
+          </div>
+          <div class="mt-4">
+            <CallToAction 
+              text="Download Deep Concentration" 
+              href={`/api/download/deep-concentration.mp3?token=${token}`}
+              variant="primary"
+              size="sm"
+            />
+          </div>
+        </div>
+
+        <!-- Track 4 -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-lg">
+          <div class="text-center mb-4">
+            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Mental Clarity</h3>
+            <p class="text-gray-600">18 minutes</p>
+          </div>
+          <p class="text-gray-700 mb-4">
+            Promotes mental clarity and reduces brain fog. Perfect for morning routines, 
+            meditation, or when you need to clear your mind.
+          </p>
+          <div class="space-y-2 text-sm text-gray-600">
+            <p><strong>Frequency:</strong> 10-12 Hz alpha waves</p>
+            <p><strong>Best for:</strong> Morning routine, meditation, clarity</p>
+            <p><strong>Format:</strong> MP3, 320 kbps</p>
+          </div>
+          <div class="mt-4">
+            <CallToAction 
+              text="Download Mental Clarity" 
+              href={`/api/download/mental-clarity.mp3?token=${token}`}
+              variant="primary"
+              size="sm"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Download All -->
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+        <h3 class="text-2xl font-bold text-blue-800 mb-4">Download Complete Collection</h3>
+        <p class="text-blue-700 mb-6">
+          Get all 4 tracks in a single ZIP file for convenience.
+        </p>
+        <CallToAction 
+          text="Download All Tracks (ZIP)" 
+          href={`/api/download/complete-collection.zip?token=${token}`}
+          variant="primary"
+          size="lg"
+        />
+      </div>
+
+      <!-- Usage Instructions -->
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">How to Use Your Audio Collection</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Best Practices</h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Use headphones for best results
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Start with lower volume and adjust
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Use in a quiet environment
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Listen daily for best results
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Optimal Times</h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                </svg>
+                Morning routine (Mental Clarity)
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                </svg>
+                Work sessions (Focus Flow)
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                </svg>
+                Creative projects (Creative Spark)
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                </svg>
+                Deep work (Deep Concentration)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Bonuses -->
+      <div class="bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Your Complete Bonus Package</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Habit Tracker</h4>
+            <p class="text-sm text-gray-600 mb-4">Notion template for tracking your progress</p>
+            <CallToAction 
+              text="Get Tracker" 
+              href={`/bonuses/tracker?token=${token}`}
+              variant="secondary"
+              size="sm"
+            />
+          </div>
+          
+          <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Email Course</h4>
+            <p class="text-sm text-gray-600 mb-4">7-day alpha mastery course</p>
+            <CallToAction 
+              text="Start Course" 
+              href={`/bonuses/course?token=${token}`}
+              variant="secondary"
+              size="sm"
+            />
+          </div>
+          
+          <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Discord Community</h4>
+            <p class="text-sm text-gray-600 mb-4">Join our exclusive community</p>
+            <CallToAction 
+              text="Join Discord" 
+              href={`/bonuses/discord?token=${token}`}
+              variant="secondary"
+              size="sm"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <!-- Access Denied -->
+    <div class="bg-red-50 border border-red-200 rounded-lg p-8 text-center">
+      <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold text-red-800 mb-4">Access Denied</h2>
+      <p class="text-red-700 mb-6">
+        This bonus content is only available to Edison Wave customers. 
+        Please ensure you have a valid access token.
+      </p>
+      <div class="space-y-4">
+        <CallToAction 
+          text="Purchase The Edison Wave" 
+          href="/review"
+          variant="primary"
+          size="lg"
+        />
+        <p class="text-sm text-red-600">
+          Need help? Contact us at bonuses@alphaperformancelab.com
+        </p>
+      </div>
+    </div>
+  )}
+</section>
+
+</MainLayout>

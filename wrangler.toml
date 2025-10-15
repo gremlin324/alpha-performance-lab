@@ -1,0 +1,20 @@
+name = "alpha-performance-lab"
+compatibility_date = "2024-01-01"
+
+[env.production]
+name = "alpha-performance-lab-prod"
+compatibility_date = "2024-01-01"
+
+[env.staging]
+name = "alpha-performance-lab-staging"
+compatibility_date = "2024-01-01"
+
+# Email Worker configuration
+[[email_workers]]
+email = "bonuses@alphaperformancelab.com"
+script = "./workers/bonus-delivery.js"
+
+# Environment variables (set via wrangler secret put)
+# AIRTABLE_API_KEY = "your_airtable_api_key"
+# AIRTABLE_BASE_ID = "your_airtable_base_id"
+# CLICKBANK_API_KEY = "your_clickbank_api_key"

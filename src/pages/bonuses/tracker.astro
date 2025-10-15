@@ -1,0 +1,312 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro'
+import CallToAction from '../../components/CallToAction.astro'
+
+// Get token from URL parameters
+const url = new URL(Astro.request.url);
+const token = url.searchParams.get('token');
+---
+
+<MainLayout title="Alpha Performance Habit Tracker - Alpha Performance Lab Bonuses" description="Download your free Notion habit tracker template worth $47. Track your alpha wave sessions, focus metrics, and productivity improvements.">
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <header class="text-center mb-16">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      📊 Alpha Performance Habit Tracker
+    </h1>
+    <p class="text-xl text-gray-600">
+      Your $47 bonus Notion template - Track your alpha wave journey
+    </p>
+  </header>
+
+  {token ? (
+    <div class="space-y-8">
+      
+      <!-- Access Granted -->
+      <div class="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-green-800 mb-4">Access Granted!</h2>
+        <p class="text-green-700 mb-6">
+          Your personalized habit tracker is ready. Download the Notion template and start tracking your progress.
+        </p>
+        <p class="text-sm text-green-600 bg-green-100 px-4 py-2 rounded-lg inline-block">
+          Access Token: {token}
+        </p>
+      </div>
+
+      <!-- Tracker Features -->
+      <div class="bg-white border border-gray-200 rounded-lg p-8 shadow-lg">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">What's Included in Your Tracker</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Daily Tracking</h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Alpha wave session duration
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Focus and concentration levels
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Sleep quality and duration
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Mood and energy levels
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Productivity metrics
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Analytics & Insights</h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Weekly progress charts
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Monthly trend analysis
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Goal setting and tracking
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Habit streak counters
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Performance insights
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download Section -->
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+        <h3 class="text-2xl font-bold text-blue-800 mb-4">Download Your Habit Tracker</h3>
+        <p class="text-blue-700 mb-6">
+          Get your personalized Notion template and start tracking your alpha wave journey today.
+        </p>
+        
+        <div class="space-y-4">
+          <CallToAction 
+            text="Download Notion Template" 
+            href={`/api/download/habit-tracker.notion?token=${token}`}
+            variant="primary"
+            size="lg"
+          />
+          
+          <div class="text-sm text-blue-600">
+            <p>📱 Compatible with Notion (free account required)</p>
+            <p>🔄 Automatic sync across all your devices</p>
+            <p>📊 Built-in analytics and progress tracking</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Setup Instructions -->
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">How to Set Up Your Tracker</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-blue-600">1</span>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Download Template</h4>
+            <p class="text-sm text-gray-600">Click the download button above to get your Notion template file</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-green-600">2</span>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Import to Notion</h4>
+            <p class="text-sm text-gray-600">Open Notion and import the template to create your personal tracker</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-purple-600">3</span>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Start Tracking</h4>
+            <p class="text-sm text-gray-600">Begin logging your daily alpha wave sessions and progress</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tracker Preview -->
+      <div class="bg-white border border-gray-200 rounded-lg p-8 shadow-lg">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Tracker Preview</h3>
+        
+        <div class="bg-gray-100 border border-gray-300 rounded-lg p-6">
+          <div class="grid grid-cols-7 gap-2 mb-4">
+            <div class="text-center text-sm font-semibold text-gray-600">Mon</div>
+            <div class="text-center text-sm font-semibold text-gray-600">Tue</div>
+            <div class="text-center text-sm font-semibold text-gray-600">Wed</div>
+            <div class="text-center text-sm font-semibold text-gray-600">Thu</div>
+            <div class="text-center text-sm font-semibold text-gray-600">Fri</div>
+            <div class="text-center text-sm font-semibold text-gray-600">Sat</div>
+            <div class="text-center text-sm font-semibold text-gray-600">Sun</div>
+          </div>
+          
+          <div class="grid grid-cols-7 gap-2 mb-4">
+            <div class="bg-green-200 h-8 rounded text-center text-xs flex items-center justify-center">✓</div>
+            <div class="bg-green-200 h-8 rounded text-center text-xs flex items-center justify-center">✓</div>
+            <div class="bg-yellow-200 h-8 rounded text-center text-xs flex items-center justify-center">~</div>
+            <div class="bg-green-200 h-8 rounded text-center text-xs flex items-center justify-center">✓</div>
+            <div class="bg-green-200 h-8 rounded text-center text-xs flex items-center justify-center">✓</div>
+            <div class="bg-gray-200 h-8 rounded text-center text-xs flex items-center justify-center">-</div>
+            <div class="bg-gray-200 h-8 rounded text-center text-xs flex items-center justify-center">-</div>
+          </div>
+          
+          <div class="text-center text-sm text-gray-600">
+            <p>✓ Completed | ~ Partial | - Not done</p>
+          </div>
+        </div>
+        
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-3">Daily Metrics</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li>• Alpha session duration (minutes)</li>
+              <li>• Focus level (1-10 scale)</li>
+              <li>• Sleep quality (1-10 scale)</li>
+              <li>• Energy level (1-10 scale)</li>
+              <li>• Mood rating (1-10 scale)</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-3">Weekly Goals</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li>• Complete 5 alpha sessions</li>
+              <li>• Average 8+ hours sleep</li>
+              <li>• Maintain 7+ focus rating</li>
+              <li>• Track mood improvements</li>
+              <li>• Note productivity gains</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Bonuses -->
+      <div class="bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Your Complete Bonus Package</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Audio Collection</h4>
+            <p class="text-sm text-gray-600 mb-4">4 professionally-mastered tracks</p>
+            <CallToAction 
+              text="Get Audio" 
+              href={`/bonuses/audio?token=${token}`}
+              variant="secondary"
+              size="sm"
+            />
+          </div>
+          
+          <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Email Course</h4>
+            <p class="text-sm text-gray-600 mb-4">7-day alpha mastery course</p>
+            <CallToAction 
+              text="Start Course" 
+              href={`/bonuses/course?token=${token}`}
+              variant="secondary"
+              size="sm"
+            />
+          </div>
+          
+          <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2">Discord Community</h4>
+            <p class="text-sm text-gray-600 mb-4">Join our exclusive community</p>
+            <CallToAction 
+              text="Join Discord" 
+              href={`/bonuses/discord?token=${token}`}
+              variant="secondary"
+              size="sm"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <!-- Access Denied -->
+    <div class="bg-red-50 border border-red-200 rounded-lg p-8 text-center">
+      <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold text-red-800 mb-4">Access Denied</h2>
+      <p class="text-red-700 mb-6">
+        This bonus content is only available to Edison Wave customers. 
+        Please ensure you have a valid access token.
+      </p>
+      <div class="space-y-4">
+        <CallToAction 
+          text="Purchase The Edison Wave" 
+          href="/review"
+          variant="primary"
+          size="lg"
+        />
+        <p class="text-sm text-red-600">
+          Need help? Contact us at bonuses@alphaperformancelab.com
+        </p>
+      </div>
+    </div>
+  )}
+</section>
+
+</MainLayout>
